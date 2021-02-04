@@ -1,0 +1,148 @@
+@mixin align-vertically($position) {
+    @include position($position, 50% null null null);
+    @include transform(translateY(-50%));
+}
+
+@mixin align-horizontally($position) {
+    @include position($position, null null null 50%);
+    @include transform(translateX(-50%));
+}
+
+@mixin align-all($position) {
+    @include position($position, 50% null null 50%);
+    @include transform(translate(-50%, -50%));
+}
+
+@mixin align-reset($position: static) {
+    @include position($position, 0 null null 0);
+    @include transform(none);
+}
+
+@mixin maxlines($n: 2) {
+    @include prefixer(box-orient, vertical, webkit);
+    @include prefixer(line-clamp, $n, webkit);
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin scroll($direction: 'y') {
+    @include prefixer(overflow-scrolling, touch, webkit spec);
+    @if $direction == 'x' {
+        overflow-x: auto;
+        white-space: nowrap;
+    } @else if $direction == 'y' {
+        overflow-y: auto;
+    }
+}
+
+@mixin responsive-wrap($padding-bottom: 56.25%) {
+    height: 0;
+    padding-bottom: $padding-bottom;
+    position: relative;
+}
+
+@mixin more-button-color($color) {
+    border-color: $color;
+    color: $color;
+
+    svg {
+        fill: $color;
+    }
+}
+
+@mixin divider-title($bg-color: $white, $color: $black) {
+    position: relative;
+    text-align: center;
+
+    &::before {
+        @include align-vertically(absolute);
+        background-color: rgba($color, 0.5);
+        content: '';
+        display: block;
+        height: 1px;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    }
+
+    span {
+        @include padding(null 0.5em);
+        background-color: $bg-color;
+        color: $color;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@mixin circle-number($size: small, $inverted: false, $color: inherit) {
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+
+    span {
+        @include align-all(absolute);
+        line-height: initial;
+    }
+
+    @if $size == small {
+        @extend %cta;
+        @include size(2.25em);
+    } @else if $size == medium {
+        @extend %subtitle;
+        @include size(2.1em);
+    } @else if $size == large {
+        @extend %neuzeit;
+        @include size(2.45em);
+        font-size: 20px;
+    }
+
+    @if $inverted {
+        background-color: $color;
+
+        span {
+            &.general-planning {
+                color: $general;
+            }
+
+            &.ceremony {
+                color: $ceremony;
+            }
+
+            &.reception {
+                color: $reception;
+            }
+
+            &.style-guide {
+                color: $styleguide;
+            }
+
+            &.groomsmen-guide {
+                color: $groomsmenguide;
+            }
+        }
+    } @else {
+        color: $color;
+
+        .general-planning & {
+            background-color: $general;
+        }
+
+        .ceremony & {
+            background-color: $ceremony;
+        }
+
+        .reception & {
+            background-color: $reception;
+        }
+
+        .style-guide & {
+            background-color: $styleguide;
+        }
+
+        .groomsmen-guide & {
+            background-color: $groomsmenguide;
+        }
+    }
+}

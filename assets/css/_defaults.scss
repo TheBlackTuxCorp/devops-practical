@@ -1,0 +1,60 @@
+@import 'neat/app/assets/stylesheets/neat-helpers';
+
+// Colors
+$black-1: #222;
+$black-2: #454545;
+$black: #000;
+$gold: #aea182;
+$gold-light: #f7f3ec;
+$gray: #656565;
+$gray-1: #ccc;
+$gray-2: #454545;
+$green: #94a18a;
+$orange: #e19856;
+$purple-1: #f2f1f9;
+$purple: #677bce;
+$red: #e52520;
+$teal: #009a81;
+$white: #fff;
+$neon: #5ce1a9;
+$blue-medium: #52a9c8;
+$orange-dark: #eb6c3d;
+
+$spot-color: $white;
+$styleguide: $gold;
+$general: $teal;
+$ceremony: $orange;
+$reception: $purple;
+$groomsmenguide: $orange-dark;
+$newsletter: $black-1;
+
+// Grid
+$column: 81.667px;
+$grid-columns: 12;
+$gutter: 20px;
+$max-width: 1200px;
+$visual-grid: false;
+$visual-grid-index: front;
+
+// Breakpoints
+$mobile-size: 459px;
+$phablet-size: 767px;
+$tablet-size: 1023px;
+$desktop-size: 1430px;
+
+$mobile: new-breakpoint(max-width $mobile-size);
+$phablet-min: new-breakpoint(min-width $mobile-size + 1);
+$phablet: new-breakpoint(max-width $phablet-size);
+$phablet-landscape: new-breakpoint(max-width $phablet-size orientation 'landscape');
+$tablet-min: new-breakpoint(min-width $phablet-size + 1);
+$tablet: new-breakpoint(max-width $tablet-size);
+$desktop-min: new-breakpoint(min-width $tablet-size + 1);
+$desktop: new-breakpoint(max-width $desktop-size);
+
+// More variables
+$power2-ease-out: cubic-bezier(0.2, 0.485, 0.205, 1);
+$transition-speed: 0.3s;
+$header-main-h: 65px;
+$header-section-h: 78px;
+$nav-h: 70px;
+$nav-h-m: 54px;

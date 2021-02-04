@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html
+    class="no-js"
+    lang="en"
+    data-ng-app="ua5App"
+    ng-strict-di="true"
+    data-ng-cloak
+    data-app>
+    <head>
+        <meta charset="utf-8">
+        <meta name="fragment" content="!">
+        <base href="/groomsguide/">
+        <link
+            href="app.css"
+            rel="stylesheet"
+            type="text/css">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title ng-bind="ngMeta.title"></title>
+        <meta content="The Groom’s Guide">
+        <meta
+            name="description"
+            content="{{ ngMeta.description }}">
+        <meta
+            property="og:description"
+            content="{{ ngMeta.description }}">
+        <meta
+            property="og:image"
+            content="{{ ngMeta.image }}">
+        <meta
+            property="og:site_name"
+            content="The Groom’s Guide">
+        <meta
+            property="og:url"
+            content="{{ ngMeta.url }}">
+        <meta
+            property="og:type"
+            content="website">
+        <meta
+            name="twitter:card"
+            content="summary_large_image">
+        <meta
+            name="twitter:title"
+            content="{{ ngMeta.title }}">
+        <meta
+            property="twitter:image:src"
+            content="{{ ngMeta.image }}">
+        <link
+            href="assets/img/favicon.png"
+            rel="icon"
+            type="image/png">
+        <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7843956/7005972/css/fonts.css" />
+    </head>
+    <body>
+        <noscript>
+            <div class="noscript">
+                Please enable JavaScript on your browser or upgrade to <a href="http://www.google.com/chrome/" target="_blank">Google Chrome</a> to use Base Angular.
+            </div>
+        </noscript>
+        <div header></div>
+        <div navbar></div>
+        <div flyout></div>
+        <div
+            ui-view
+            class="container smooth-page-scroll__target"
+            ng-class="animationType">
+        </div>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-32950567-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+        <script type="text/javascript" id="inspectletjs">
+            window.__insp = window.__insp || [];
+            __insp.push(['wid', 1561599613]);
+            (function() {
+            function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+            setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+            })();
+        </script>
+        <script src="vendor.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

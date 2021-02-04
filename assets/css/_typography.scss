@@ -1,0 +1,257 @@
+@include font-face("benton-sans-extra-light", "assets/fonts/benton-sans/extra-light/42c82a73-4eac-43fe-bcd4-363aa4538097", $file-formats: eot woff svg ttf);
+@include font-face("benton-sans-light", "assets/fonts/benton-sans/light/492cc502-f22a-4dd4-80a8-b61a1677bcad", $file-formats: eot woff svg ttf);
+@include font-face("benton-sans-thin", "assets/fonts/benton-sans/thin/095139c3-f5c9-49ad-943f-9b480f0114b2", $file-formats: eot woff svg ttf);
+@include font-face("itc-cheltenham", "assets/fonts/itc-cheltenham/31F80C_0_0", $file-formats: eot woff woff2 ttf);
+@include font-face("neuzeit", "assets/fonts/neuzeit/neuzeit", $file-formats: eot svg woff woff2 ttf);
+@include font-face("neuzeit-bold", "assets/fonts/neuzeit/neuzeit-bold", $file-formats: eot svg woff woff2 ttf);
+@include font-face("sentinel-light", "assets/fonts/sentinel/sentinel-light", $file-formats: woff woff2 eot ttf);
+@include font-face("sentinel-light-italic", "assets/fonts/sentinel/sentinel-light-italic", $file-formats: woff woff2 eot ttf);
+// Reset headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+%primary-headline {
+    font-family: 'itc-cheltenham';
+    letter-spacing: -0.02em;
+}
+
+%knockout {
+    font-family: 'Knockout 66 A', 'Knockout 66 B';
+    font-style: normal;
+    font-weight: 400;
+
+    strong {
+        font-weight: 400;
+    }
+}
+
+%primary-headline-x-large {
+    @extend %primary-headline;
+    font-size: 120px;
+}
+
+%primary-headline-large {
+    @extend %primary-headline;
+    font-size: 100px;
+}
+
+%primary-headline-medium {
+    @extend %primary-headline;
+    font-size: 55px;
+    line-height: 1.1;
+}
+
+%primary-headline-small {
+    @extend %primary-headline;
+    font-size: 32px;
+}
+
+%primary-headline-xsmall {
+    @extend %primary-headline;
+    font-size: 24px;
+}
+
+%secondary-headline {
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+%secondary-headline-large {
+    @extend %secondary-headline;
+    font-family: 'benton-sans-extra-light';
+    font-size: 60px;
+    line-height: 1;
+}
+
+%secondary-headline-medium {
+    @extend %secondary-headline;
+    font-family: 'benton-sans-extra-light';
+    font-size: 36px;
+}
+
+%secondary-headline-small {
+    @extend %secondary-headline;
+    font-family: 'benton-sans-light';
+    font-size: 24px;
+}
+
+%body {
+    font-family: 'sentinel-light';
+    letter-spacing: -0.02em;
+}
+
+%body-italic {
+    font-family: 'sentinel-light-italic';
+}
+
+%body-xlarge {
+    @extend %body;
+    font-size: 42px;
+    line-height: 1.25;
+}
+
+%body-large {
+    @extend %body;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+%body-medium {
+    @extend %body;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+%body-small {
+    @extend %body;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+%body-xsmall {
+    @extend %body;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+%neuzeit {
+    font-family: 'neuzeit-bold';
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+%medium-title {
+    @extend %neuzeit;
+    font-size: 24px;
+}
+
+%subtitle {
+    @extend %neuzeit;
+    font-size: 16px;
+}
+
+%cta {
+    @extend %neuzeit;
+    font-size: 13px;
+}
+
+%utility {
+    font-family: 'courier';
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+}
+
+%gg-title-main {
+    @extend %knockout;
+    font-size: 170px;
+}
+
+%gg-title {
+    @extend %primary-headline;
+    font-size: 100px;
+    line-height: 1.1;
+}
+
+%gg-title-secondary {
+    @extend %primary-headline;
+    font-size: 80px;
+    line-height: 1.1;
+}
+
+%gg-section-title {
+    @extend %neuzeit;
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+%gg-title-small {
+    @extend %subtitle;
+    font-size: 18px;
+}
+
+@include media($desktop) {
+
+    %gg-title-main {
+        font-size: 140px;
+    }
+}
+
+@include media($tablet) {
+    %primary-headline-x-large {
+        font-size: 50px;
+    }
+
+    %primary-headline-large {
+        font-size: 50px;
+    }
+
+    %primary-headline-medium {
+        font-size: 27.5px;
+    }
+
+    %primary-headline-small {
+        font-size: 20px;
+    }
+
+    %body-xlarge {
+        font-size: 30px;
+    }
+
+    %body-large {
+        font-size: 18px;
+    }
+
+    %body-medium {
+        font-size: 18px;
+    }
+
+    %body-xsmall {
+        font-size: 13px;
+    }
+
+    %cta {
+        font-size: 12px;
+    }
+
+    %subtitle {
+        font-size: 12px;
+    }
+
+    %gg-title-main {
+        font-size: 100px;
+    }
+}
+
+@include media($phablet) {
+
+    %gg-title-main {
+        font-size: 60px;
+    }
+
+    %gg-title {
+        font-size: 50px;
+    }
+
+    %gg-title-secondary {
+        font-size: 36px;
+    }
+
+    %gg-section-title {
+        font-size: 28px;
+    }
+}

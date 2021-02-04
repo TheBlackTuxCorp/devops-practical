@@ -1,0 +1,146 @@
+.h-pad {
+    @extend %h-padding;
+}
+
+.inner-container {
+    @include outer-container;
+}
+
+.row {
+    @include row();
+    position: relative;
+}
+
+.layout__icon {
+    @include align-horizontally(absolute);
+    @include padding(null 16px);
+    background-color: $white;
+    top: -45px;
+    z-index: 1;
+
+    img {
+        display: block;
+        height: 90px;
+    }
+
+    .groomsmen-guide & {
+        display: none;
+    }
+}
+
+.pull-up {
+    margin-top: -55px;
+}
+
+@include media($desktop-min) {
+
+    .border-right {
+        border-right: 1px solid $gray-1;
+    }
+
+    .border-left {
+        border-left: 1px solid $gray-1;
+    }
+
+    .border-top {
+        border-top: 1px solid $gray-1;
+    }
+
+    .margin-top {
+        margin-top: 55px;
+    }
+
+    .margin-top-large {
+        margin-top: 110px;
+    }
+
+    .margin-top-small {
+        margin-top: 30px;
+    }
+
+    .pad-top-large {
+        padding-top: 110px;
+    }
+
+    .pad-right {
+        padding-right: $gutter;
+    }
+
+    .pad-left {
+        padding-left: $gutter;
+    }
+
+    .shift-1 {
+        @include shift(1);
+    }
+
+    .pad {
+        @include pad(0 default);
+    }
+
+    $span-cols: $grid-columns;
+
+    @while $span-cols > 0 {
+
+        .span-#{$span-cols} {
+            @include span-columns($span-cols);
+        }
+
+        .span-#{$span-cols}-collapse {
+            @include span-columns($span-cols, block-collapse);
+        }
+
+        $span-cols: $span-cols - 1;
+    }
+
+    .span-4-of-8 {
+        @include span-columns(4 of 8);
+    }
+
+    .span-4-of-9 {
+        @include span-columns(4 of 9);
+    }
+
+    .span-7-of-9 {
+        @include span-columns(7 of 9);
+    }
+
+    .span-3-in-8 {
+        @include span-columns(2.6666666667 of 8);
+    }
+}
+
+@include media($tablet) {
+
+    .layout__icon {
+        top: -36px;
+
+        img {
+            height: 72px;
+        }
+    }
+
+    .h-pad .h-pad {
+        @include padding(null 0);
+    }
+
+    .border-mobile {
+        border-top: 1px solid $gray-1;
+    }
+
+    .margin-top-mobile {
+        margin-top: 45px;
+    }
+
+    .margin-top-large-mobile {
+        margin-top: 90px;
+    }
+
+    .padding-top-mobile {
+        padding-top: 45px;
+    }
+
+    .padding-top-large-mobile {
+        padding-top: 90px;
+    }
+}

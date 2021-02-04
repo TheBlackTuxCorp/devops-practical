@@ -1,0 +1,95 @@
+%button {
+    @extend %cta;
+    @include padding(1.1em null);
+    @include transition(opacity $transition-speed);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+%button-close {
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        @include transition(transform $transition-speed $transition-speed);
+        @include position(absolute, 20% 50%);
+        @include transform-origin(center);
+        @include size(1px 60%);
+        @include transform(rotate(0));
+        background-color: $white;
+        content: '\A';
+        display: block;
+    }
+
+    .open & {
+
+        &::before {
+            @include transform(rotate(45deg));
+        }
+
+        &::after {
+            @include transform(rotate(-45deg));
+        }
+    }
+
+}
+
+%button-more {
+    @extend %button;
+    @include padding(null 8em null 4em);
+    border-style: solid;
+    border-width: 2px;
+    position: relative;
+    text-align: center;
+
+    svg {
+        @include align-vertically(absolute);
+        @include size(3em 1em);
+        right: 3em;
+    }
+}
+
+%responsive {
+    @include position(absolute, 0 null null 0);
+    @include size(100%);
+}
+
+%image-block {
+    display: block;
+    max-width: 100%;
+}
+
+%cover-img {
+    background-color: $black;
+    background-position: center;
+    background-size: cover;
+}
+
+%h-padding {
+    @include padding(null $gutter);
+}
+
+%v-padding {
+    @include padding(80px null 110px);
+}
+
+%no-tap-color {
+    @include prefixer(tap-highlight-color, rgba($black, 0), webkit);
+}
+
+%slice {
+    @extend %h-padding;
+    @extend %v-padding;
+}
+
+@include media($phablet) {
+
+    %v-padding {
+        @include padding(30px null);
+    }
+}
