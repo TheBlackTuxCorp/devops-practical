@@ -1,6 +1,4 @@
-FROM nginx:alpine
-
-COPY . /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80
+# Update this Dockerfile to build an nginx alpine image 
+# with nginx.conf copied to /etc/nginx
+# and all files copied to /user/share/nginx/html/
+# and port 80 exposed
