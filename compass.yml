@@ -1,0 +1,17 @@
+name: devops-practical
+id: ari:cloud:compass:4a538ecb-95cc-4c0b-8b16-25736be28deb:component/e7cb1299-05ac-45dd-b7bd-07d489d90f82/d214ebd7-d4cb-4827-a97c-01ba6772168a
+description: Practical exercise for DevOps Engineering interviews
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/TheBlackTuxCorp/devops-practical
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:scss
+  - source:github
+customFields: null
